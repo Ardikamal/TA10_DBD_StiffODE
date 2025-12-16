@@ -1,0 +1,4 @@
+Solver,nfev,Status
+RK45,326,True
+BDF,410,True
+Radau,709,True
