@@ -1,0 +1,111 @@
+# 📊 TA-10 – Simulasi Sistem Kaku (Stiff ODE)
+**Mata Kuliah:** Pemodelan dan Simulasi / Metode Numerik  
+**Topik:** Simulasi Sistem Kaku (Stiff Ordinary Differential Equations)  
+**Studi Kasus:** Penyebaran Demam Berdarah Dengue (DBD) – Model SIR  
+**Role:** Simulation Engineer / Numerical Analyst  
+
+---
+
+## 🎯 Tujuan Proyek
+Proyek ini bertujuan untuk membuktikan secara **empiris dan visual** bahwa:
+1. **Metode eksplisit** (Euler, RK4/RK45) **gagal atau tidak efisien** pada sistem kaku.
+2. **Stiff solver implisit** (BDF dan Radau) mampu memberikan solusi yang **stabil dan efisien**.
+3. Perbedaan performa solver dianalisis melalui:
+   - Stabilitas numerik
+   - Waktu komputasi
+   - Jumlah evaluasi fungsi (*number of function evaluations / nfev*)
+
+---
+
+## 🧠 Konsep Sistem Kaku (Stiff System)
+Sistem dikatakan **kaku** apabila memiliki **lebih dari satu skala waktu** yang sangat berbeda (proses cepat dan lambat berjalan bersamaan).  
+Pada kondisi ini:
+- Metode eksplisit keluar dari *stability region*
+- Langkah waktu harus sangat kecil → komputasi mahal
+- Metode implisit lebih sesuai karena memanfaatkan informasi Jacobian
+
+---
+
+## 🗂️ Struktur Proyek
+TA10_DBD_StiffODE/
+│
+├── app.py # Aplikasi web (Streamlit – deploy)
+├── main.py # Script eksperimen numerik (non-UI)
+├── requirements.txt # Daftar dependensi
+├── README.md # Dokumentasi proyek
+│
+├── data/
+│ └── DATA DBD.csv # Dataset kasus DBD
+│
+├── src/
+│ ├── models.py # Model SIR (ODE)
+│ ├── explicit_solvers.py # Metode Euler eksplisit
+│ ├── stiff_solvers.py # Solver solve_ivp (RK45, BDF, Radau)
+│ ├── dataset.py # Loader & normalisasi data
+│ └── visualization.py # Utilitas plotting (jika diperlukan)
+│
+└── output/
+└── *.png # Grafik hasil simulasi
+
+---
+
+## ⚙️ Metode Numerik yang Digunakan
+- **Euler Explicit** → Demonstrasi kegagalan (instability)
+- **RK45 (Eksplisit Adaptif)** → Stabil tapi tidak efisien
+- **BDF (Implicit Stiff Solver)** → Stabil & efisien
+- **Radau (Implicit Stiff Solver)** → Stabil & efisien
+
+Implementasi solver menggunakan:
+```python
+scipy.integrate.solve_ivp
+
+📊 Output & Visualisasi
+Aplikasi menampilkan:
+❌ Grafik kegagalan metode Euler
+✅ Grafik perbandingan RK45 vs BDF vs Radau
+📈 Perbandingan model SIR dengan data DBD
+📋 Tabel kinerja solver:
+
+Metode
+Waktu komputasi
+Jumlah evaluasi fungsi (nfev)
+Status keberhasilan
+Semua visual ditampilkan dalam dashboard simetris dan interaktif.
+
+🚀 Cara Menjalankan Program
+1️⃣ Buat Virtual Environment (Opsional tapi Disarankan)
+python -m venv venv
+Aktifkan:
+Windows:
+venv\Scripts\activate
+
+2️⃣ Install Dependensi
+pip install -r requirements.txt
+
+3️⃣ Jalankan Aplikasi Web (Deploy Lokal)
+streamlit run app.py
+Aplikasi akan terbuka otomatis di browser.
+
+🧪 Contoh Parameter Simulasi
+Untuk menghasilkan sistem sangat kaku:
+β (Transmission Rate) = 5.0
+γ (Recovery Rate) = 0.1
+Dengan parameter ini:
+Euler gagal (tidak stabil)
+RK45 sangat mahal secara komputasi
+BDF & Radau bekerja optimal
+
+📌 Kesimpulan
+Sistem penyebaran DBD dapat dimodelkan sebagai ODE kaku
+Metode eksplisit tidak cocok untuk sistem kaku
+Solver implisit (BDF & Radau) adalah pilihan terbaik
+Hasil simulasi konsisten dengan teori kestabilan numerik
+
+👨‍💻 Catatan Akademik
+Proyek ini dikembangkan sebagai bagian dari Tugas Akhir 10 (TA-10) dan disusun sesuai dengan:
+Tujuan pembelajaran mata kuliah
+Kaidah numerik dan simulasi
+Praktik pemrograman ilmiah mahasiswa informatika semester 5
+dibuat oleh Ardi Kamal Karima
+NIM 301230023
+Kelas 5C/IF
