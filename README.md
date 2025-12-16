@@ -55,7 +55,7 @@ TA10_DBD_StiffODE/
 
 ---
 
-## 📊 Output dan Visualisasi
+📊 Output dan Visualisasi
 Aplikasi menampilkan:
 ❌ Grafik kegagalan metode Euler
 ✅ Grafik perbandingan RK45 vs BDF vs Radau
@@ -93,7 +93,7 @@ BDF dan Radau bekerja optimal
 
 ---
 
-## 📌 Kesimpulan
+📌 Kesimpulan
 Sistem penyebaran DBD dapat dimodelkan sebagai ODE kaku
 Metode eksplisit tidak cocok untuk sistem kaku
 Solver implisit (BDF dan Radau) merupakan pilihan terbaik
@@ -101,7 +101,7 @@ Hasil simulasi konsisten dengan teori kestabilan numerik
 
 ---
 
-## 👨‍💻 Catatan Akademik
+👨‍💻 Catatan Akademik
 Proyek ini dikembangkan sebagai bagian dari Tugas Akhir 10 (TA-10)
 dan disusun sesuai dengan:
 Tujuan pembelajaran mata kuliah
@@ -110,7 +110,9 @@ Praktik pemrograman ilmiah mahasiswa Informatika Semester 5
 
 ---
 
-## 👨‍💻 Disusun oleh:
+Disusun oleh:
 Nama: Ardi Kamal Karima
 NIM: 301230023
 Kelas: 5C / Informatika
+Universitas: Universitas Bale Bandung (UNIBBA)
+Fakultas: Teknologi dan Informasi
