@@ -27,25 +27,26 @@ Pada kondisi ini:
 ---
 
 ## 🗂️ Struktur Proyek
+
+```text
 TA10_DBD_StiffODE/
-│
-├── app.py # Aplikasi web (Streamlit – deploy)
-├── main.py # Script eksperimen numerik (non-UI)
-├── requirements.txt # Daftar dependensi
-├── README.md # Dokumentasi proyek
+├── app.py                  # Aplikasi web (Streamlit – deploy)
+├── main.py                 # Eksperimen numerik (tanpa UI)
+├── requirements.txt        # Daftar dependensi Python
+├── README.md               # Dokumentasi proyek
 │
 ├── data/
-│ └── DATA DBD.csv # Dataset kasus DBD
+│   └── DATA DBD.csv        # Dataset kasus DBD
 │
 ├── src/
-│ ├── models.py # Model SIR (ODE)
-│ ├── explicit_solvers.py # Metode Euler eksplisit
-│ ├── stiff_solvers.py # Solver solve_ivp (RK45, BDF, Radau)
-│ ├── dataset.py # Loader & normalisasi data
-│ └── visualization.py # Utilitas plotting (jika diperlukan)
+│   ├── models.py           # Model SIR (ODE)
+│   ├── explicit_solvers.py # Metode Euler eksplisit
+│   ├── stiff_solvers.py    # Solver solve_ivp (RK45, BDF, Radau)
+│   ├── dataset.py          # Loader & normalisasi data
+│   └── visualization.py   # Utilitas plotting
 │
 └── output/
-└── *.png # Grafik hasil simulasi
+    └── *.png               # Grafik hasil simulasi
 
 ---
 
